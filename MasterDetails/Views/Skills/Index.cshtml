@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MasterDetails.Models.Skills>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="alert alert-primary">Skill List</h1>
+
+<p class="d-flex justify-content-end">
+    <a class="btn btn-primary btn-sm" asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-striped table-sm">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillsName)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SkillsName)
+                </td>
+                <td>
+                    <a class="btn btn-outline-success btn-sm" asp-action="Edit" asp-route-id="@item.SkillsId">Edit</a>
+                    <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.SkillsId">Details</a>
+                    <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.SkillsId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
