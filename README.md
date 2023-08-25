@@ -1,0 +1,1 @@
+# ASP_Dot_Net_Core_MasterDetails_Project
